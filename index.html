@@ -25,7 +25,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"UnionBro Poker Club","url":"https://unionbro.club/","description":"Закрытый онлайн покер клуб на платформе X Poker. ID клуба 2535777.","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://t.me/unionbropoker","availableLanguage":["Russian","English","Vietnamese","Chinese","Korean"]},"sameAs":["https://t.me/unionbropoker"]}
+{"@context":"https://schema.org","@type":"Organization","name":"UnionBro Poker Club","url":"https://unionbro.club/","description":"Закрытый онлайн покер клуб на платформе X Poker. ID клуба 2535777.","contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://t.me/BroUnionManager","availableLanguage":["Russian","English","Vietnamese","Chinese","Korean"]},"sameAs":["https://t.me/BroUnionManager"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Клуб безопасен?","acceptedAnswer":{"@type":"Answer","text":"Да. Клуб работает на платформе X Poker — лицензированном приложении. Работаем с 2020 года."}},{"@type":"Question","name":"Как работают выплаты?","acceptedAnswer":{"@type":"Answer","text":"Выплаты через менеджера клуба. Поддерживаем USDT, рубли, гривны. Минимальная сумма — $20. Комиссия — 0%."}},{"@type":"Question","name":"Как быстро выводятся деньги?","acceptedAnswer":{"@type":"Answer","text":"Среднее время — 15 минут. В пиковые часы до 1 часа."}},{"@type":"Question","name":"Игры честные?","acceptedAnswer":{"@type":"Answer","text":"Все игры на X Poker с сертифицированным RNG. Боты запрещены."}},{"@type":"Question","name":"Есть поддержка?","acceptedAnswer":{"@type":"Answer","text":"Поддержка 24/7 в Telegram. Среднее время ответа — 2 минуты."}}]}
@@ -681,6 +681,49 @@ section{position:relative;z-index:1;padding:0 20px}
 .modal-cta::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 40%,rgba(255,255,255,0.2) 50%,transparent 60%);animation:shimmer 3s ease-in-out infinite;}
 @keyframes pulse-gold{0%,100%{box-shadow:0 0 30px rgba(212,168,67,0.3), 0 0 60px rgba(212,168,67,0.1)}50%{box-shadow:0 0 40px rgba(212,168,67,0.5), 0 0 80px rgba(212,168,67,0.2)}}
 .modal-fine{margin-top:16px;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.4;}
+
+/* DOWNLOAD APPS SECTION */
+.dl-apps{padding:80px 20px;}
+.dl-apps-inner{max-width:900px;margin:0 auto;}
+.dl-apps-header{text-align:center;margin-bottom:48px;}
+.dl-apps-title{font-family:var(--font-display);font-weight:900;font-size:clamp(26px,5vw,40px);letter-spacing:-0.5px;background:linear-gradient(135deg,#fff 40%,var(--emerald));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;}
+.dl-apps-sub{font-size:15px;color:var(--gray);line-height:1.6;max-width:500px;margin:0 auto;}
+.dl-apps-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:680px){.dl-apps-cards{grid-template-columns:1fr;}}
+.dl-card{position:relative;background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:28px;overflow:hidden;transition:border-color .3s ease,transform .3s ease;}
+.dl-card:hover{transform:translateY(-3px);}
+.dl-card-glow{position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;pointer-events:none;opacity:0.5;}
+.dl-card-glow--emerald{background:radial-gradient(circle,rgba(0,230,138,0.12) 0%,transparent 70%);}
+.dl-card-glow--gold{background:radial-gradient(circle,rgba(212,168,67,0.12) 0%,transparent 70%);}
+.dl-card:hover .dl-card-glow--emerald{opacity:0.9;}
+.dl-card:hover .dl-card-glow--gold{opacity:0.9;}
+.dl-card-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px;}
+.dl-card-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.dl-card-icon--emerald{background:rgba(0,230,138,0.08);border:1px solid rgba(0,230,138,0.2);}
+.dl-card-icon--gold{background:rgba(212,168,67,0.08);border:1px solid rgba(212,168,67,0.2);}
+.dl-card-name{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-0.3px;color:var(--emerald);margin-bottom:6px;line-height:1.2;}
+.dl-card-name--gold{color:var(--gold);}
+.dl-card-desc{font-size:13px;color:var(--gray);line-height:1.55;}
+.dl-btns{display:flex;flex-direction:column;gap:10px;}
+.dl-btn{display:flex;align-items:center;gap:10px;padding:13px 18px;border-radius:12px;font-family:var(--font-body);font-size:13px;font-weight:600;text-decoration:none;border:1px solid;transition:all .22s ease;letter-spacing:0.2px;line-height:1;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.dl-btn-ico{width:16px;height:16px;flex-shrink:0;}
+.dl-btn--android{background:rgba(61,220,132,0.08);border-color:rgba(61,220,132,0.25);color:#3ddc84;}
+.dl-btn--android:hover{background:rgba(61,220,132,0.16);border-color:rgba(61,220,132,0.5);box-shadow:0 0 14px rgba(61,220,132,0.15);}
+.dl-btn--apple{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.12);color:var(--white);}
+.dl-btn--apple:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.25);box-shadow:0 0 14px rgba(255,255,255,0.06);}
+.dl-btn--windows{background:rgba(0,120,215,0.08);border-color:rgba(0,120,215,0.3);color:#5ab4f5;}
+.dl-btn--windows:hover{background:rgba(0,120,215,0.16);border-color:rgba(0,120,215,0.5);box-shadow:0 0 14px rgba(0,120,215,0.15);}
+.dl-btn:active{transform:scale(0.97);}
+@media(max-width:480px){.dl-btn{padding:15px 16px;font-size:14px;}}
+
+/* ClubGG ID badge */
+.dl-clubid-wrap{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding:14px 16px;background:rgba(212,168,67,0.06);border:1px solid rgba(212,168,67,0.18);border-radius:14px;flex-wrap:wrap;}
+.dl-clubid-label{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:rgba(212,168,67,0.7);white-space:nowrap;}
+.dl-clubid-num{font-family:var(--font-display);font-weight:900;font-size:22px;letter-spacing:2px;background:linear-gradient(135deg,var(--gold),#f0c84a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex:1;text-align:center;}
+.dl-clubid-copy{padding:6px 14px;border-radius:8px;border:1px solid rgba(212,168,67,0.3);background:rgba(212,168,67,0.08);color:var(--gold);font-size:11px;font-weight:700;cursor:pointer;font-family:var(--font-body);letter-spacing:0.3px;transition:all .2s ease;white-space:nowrap;}
+.dl-clubid-copy:hover{background:rgba(212,168,67,0.18);border-color:rgba(212,168,67,0.5);}
+.dl-clubid-copy:active{transform:scale(0.96);}
+@media(max-width:360px){.dl-clubid-wrap{flex-direction:column;text-align:center;}.dl-clubid-num{text-align:center;}}
 </style>
 </head>
 <body>
@@ -749,7 +792,7 @@ section{position:relative;z-index:1;padding:0 20px}
   <p class="hero-sub" data-i18n="hero_sub">Закрытый клуб в X&nbsp;Poker</p>
   <div class="hero-id">ID 2535777</div>
   <div class="btn-group">
-    <a href="https://t.me/unionbropoker" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="join_now">Вступить сейчас →</a>
+    <a href="https://t.me/BroUnionManager" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="join_now">Вступить сейчас →</a>
     <button class="btn btn-secondary" id="heroBonusBtn" data-i18n="get_bonus">Получить бонус</button>
   </div>
 </section>
@@ -792,9 +835,83 @@ section{position:relative;z-index:1;padding:0 20px}
           <span>Только <span class="freeroll-detail-em">члены клуба</span></span>
         </div>
       </div>
-      <a href="https://t.me/unionbropoker" class="freeroll-cta" target="_blank" rel="noopener">
+      <a href="https://t.me/BroUnionManager" class="freeroll-cta" target="_blank" rel="noopener">
         🏆 Участвовать бесплатно →
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD APPS -->
+<section class="dl-apps" id="download">
+  <div class="dl-apps-inner">
+    <div class="dl-apps-header reveal">
+      <h2 class="dl-apps-title">Скачать приложения</h2>
+      <p class="dl-apps-sub">Выберите платформу и установите X-Poker или ClubGG на свой телефон или Windows.</p>
+    </div>
+    <div class="dl-apps-cards">
+
+      <!-- X-Poker Card -->
+      <div class="dl-card reveal reveal-d1">
+        <div class="dl-card-glow dl-card-glow--emerald"></div>
+        <div class="dl-card-header">
+          <div class="dl-card-icon dl-card-icon--emerald">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="28" rx="8" fill="rgba(0,230,138,0.15)"/>
+              <path d="M7 8L14 14L7 20M14 8H21" stroke="#00e68a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="dl-card-name">X-Poker</div>
+            <div class="dl-card-desc">Играй с телефона или ПК. Быстрая установка и удобный вход в клуб.</div>
+          </div>
+        </div>
+        <div class="dl-btns">
+          <a href="https://apps.apple.com/ua/app/x-poker-holdem-omaha-ofc/id1534470447?l=ru" class="dl-btn dl-btn--apple" target="_blank" rel="noopener">
+            <svg class="dl-btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            iPhone / App Store
+          </a>
+        </div>
+      </div>
+
+      <!-- ClubGG Card -->
+      <div class="dl-card reveal reveal-d2">
+        <div class="dl-card-glow dl-card-glow--gold"></div>
+        <div class="dl-card-header">
+          <div class="dl-card-icon dl-card-icon--gold">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="28" rx="8" fill="rgba(212,168,67,0.15)"/>
+              <path d="M14 6l2.5 5 5.5.8-4 3.9.94 5.5L14 18.5l-4.94 2.7.94-5.5L6 11.8l5.5-.8L14 6z" stroke="#d4a843" stroke-width="1.8" stroke-linejoin="round" fill="rgba(212,168,67,0.15)"/>
+            </svg>
+          </div>
+          <div>
+            <div class="dl-card-name dl-card-name--gold">ClubGG</div>
+            <div class="dl-card-desc">Официальное приложение для игры с мобильных устройств.</div>
+          </div>
+        </div>
+
+        <!-- ClubGG Club ID badge -->
+        <div class="dl-clubid-wrap">
+          <div class="dl-clubid-label">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.6 3.2 3.5.5-2.55 2.48.6 3.5L7 9l-3.15 1.68.6-3.5L1.9 4.7l3.5-.5L7 1z" fill="#d4a843" opacity="0.9"/></svg>
+            ID клуба в ClubGG
+          </div>
+          <div class="dl-clubid-num">408340</div>
+          <button class="dl-clubid-copy" onclick="navigator.clipboard.writeText('408340').then(()=>{this.textContent='Скопировано ✓';setTimeout(()=>{this.textContent='Копировать';},1800)})" type="button">Копировать</button>
+        </div>
+
+        <div class="dl-btns">
+          <a href="https://play.google.com/store/apps/details?id=com.nsus.clubgg&hl=ru" class="dl-btn dl-btn--android" target="_blank" rel="noopener">
+            <svg class="dl-btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.341a.9.9 0 0 1-.9.9H7.377a.9.9 0 0 1-.9-.9V9.036a.9.9 0 0 1 .9-.9h9.246a.9.9 0 0 1 .9.9v6.305zM5.59 7.5l-1.5-2.598 1.038-.6 1.5 2.598L5.59 7.5zm12.82 0-1.038-.6 1.5-2.598 1.038.6-1.5 2.598zM12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 1.5a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17z"/></svg>
+            Android
+          </a>
+          <a href="https://apps.apple.com/ua/app/clubgg-poker/id1529839330?l=ru" class="dl-btn dl-btn--apple" target="_blank" rel="noopener">
+            <svg class="dl-btn-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            iPhone / App Store
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -805,7 +922,7 @@ section{position:relative;z-index:1;padding:0 20px}
   <div class="steps-list">
     <a href="https://apps.apple.com/us/app/x-poker-holdem-omaha-ofc/id1534470447" target="_blank" rel="noopener" class="step reveal reveal-d1" style="text-decoration:none;color:inherit"><div class="step-num">1</div><div class="step-text" data-i18n="step1">Скачать <span>X&nbsp;Poker</span></div></a>
     <div class="step reveal reveal-d2"><div class="step-num">2</div><div class="step-text" data-i18n="step2">Ввести ID: <span>2535777</span></div></div>
-    <a href="https://t.me/unionbropoker" target="_blank" rel="noopener" class="step reveal reveal-d3" style="text-decoration:none;color:inherit"><div class="step-num">3</div><div class="step-text" data-i18n="step3">Написать <span>менеджеру</span></div></a>
+    <a href="https://t.me/BroUnionManager" target="_blank" rel="noopener" class="step reveal reveal-d3" style="text-decoration:none;color:inherit"><div class="step-num">3</div><div class="step-text" data-i18n="step3">Написать <span>менеджеру</span></div></a>
     <div class="step reveal reveal-d4"><div class="step-num">4</div><div class="step-text" data-i18n="step4">Играть и получать <span>бонус</span></div></div>
   </div>
 </section>
@@ -923,7 +1040,7 @@ section{position:relative;z-index:1;padding:0 20px}
       <div class="cd-sep">:</div>
       <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-unit-label" data-i18n="cd_s">сек</div></div>
     </div>
-    <a href="https://t.me/unionbropoker" class="btn btn-primary" target="_blank" rel="noopener" style="max-width:280px;margin:0 auto;" data-i18n="claim_bonus">Забрать бонус →</a>
+    <a href="https://t.me/BroUnionManager" class="btn btn-primary" target="_blank" rel="noopener" style="max-width:280px;margin:0 auto;" data-i18n="claim_bonus">Забрать бонус →</a>
     <div class="cd-reset" data-i18n="cd_reset">🔥 Осталось мало времени — успей получить бонус</div>
   </div>
 </section>
@@ -953,12 +1070,12 @@ section{position:relative;z-index:1;padding:0 20px}
 <!-- FINAL CTA -->
 <section class="final-cta">
   <h2 data-i18n="cta_h2">Готов играть?<br><span class="accent" style="font-size:0.75em" data-i18n="cta_sub">Вступай сегодня</span></h2>
-  <a href="https://t.me/unionbropoker" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="join_now">Вступить сейчас →</a>
+  <a href="https://t.me/BroUnionManager" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="join_now">Вступить сейчас →</a>
 </section>
 
 <!-- STICKY -->
 <div class="sticky-bar" id="stickyBar">
-  <a href="https://t.me/unionbropoker" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="join_club">Вступить в клуб</a>
+  <a href="https://t.me/BroUnionManager" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="join_club">Вступить в клуб</a>
 </div>
 
 <!-- MODAL -->
@@ -970,7 +1087,7 @@ section{position:relative;z-index:1;padding:0 20px}
     <div class="modal-highlight">+10%</div>
     <div class="modal-title" style="font-size:16px;margin-bottom:4px" data-i18n="modal_sub">к первому депозиту</div>
     <p class="modal-subtitle" data-i18n="modal_body">Напиши менеджеру, назови промокод<br>и получи бонус при пополнении</p>
-    <a href="https://t.me/unionbropoker" target="_blank" rel="noopener" class="modal-cta" data-i18n="claim_bonus">Забрать бонус →</a>
+    <a href="https://t.me/BroUnionManager" target="_blank" rel="noopener" class="modal-cta" data-i18n="claim_bonus">Забрать бонус →</a>
     <p class="modal-fine">Клуб ID 2535777 · X&nbsp;Poker</p>
   </div>
 </div>
